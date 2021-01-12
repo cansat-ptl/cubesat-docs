@@ -4,11 +4,11 @@
 \LoadClass[a4paper,11pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page geometry %%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[top=2cm, bottom=2cm, left=2.75cm, right=1.5cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=1.5cm]{geometry}
 
-\setlength{\headheight}{20pt}
-\setlength{\headsep}{15pt}
-\setlength{\footskip}{25pt}
+\setlength{\headheight}{7mm}
+\setlength{\headsep}{5mm}
+\setlength{\footskip}{10mm}
 
 \usepackage{parskip}
 
@@ -63,8 +63,8 @@
 \markboth{Left}{Right}
 \pagestyle{fancy}
 
-\fancyheadoffset[L]{1.25cm}
-\fancyfootoffset[L]{1.25cm}
+\fancyheadoffset[L]{1.5cm}
+\fancyfootoffset[L]{1.5cm}
 
 \fancyhf{}
 \AtBeginDocument{%
@@ -72,17 +72,26 @@
 \rhead{{\footnotesize \iDocName{}}}%
 \rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
 \lfoot{{\footnotesize Якутские космические системы - http://yktsat.sjsa.ru/docs}}%
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 \chead{\HeaderRect}%
 }
 
-\let\HeadRule\headrule
+%\let\HeadRule\headrule
 
-\renewcommand\headrule{\color{blueAux}\HeadRule}
+%\renewcommand\headrule{\color{blueAux}\HeadRule}
 
 \fancypagestyle{plain}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{titlepage}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} - http://yktsat.sjsa.ru/docs/ykts-000001.pdf}}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,7 +100,7 @@
 \usepackage{titlesec}
 
 \newlength\titleindent
-\setlength\titleindent{1.0cm}
+\setlength\titleindent{1.25cm}
 
 \titleformat{\section}
   {\Large\bfseries}{\llap{\parbox[b]{\titleindent}{\bfseries\thesection\hfill}}}{0cm}{}
