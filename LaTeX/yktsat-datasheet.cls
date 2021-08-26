@@ -70,7 +70,7 @@
 \AtBeginDocument{%
 \lhead{{\footnotesize \nouppercase{\rightmark}}}%
 \rhead{{\footnotesize \iDocName{}}}%
-\rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
+\rfoot{{\footnotesize \iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
 \lfoot{{\footnotesize Якутские Аэрокосмические Системы - https://docs.yktaero.space}}%
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
