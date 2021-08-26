@@ -71,7 +71,7 @@
 \lhead{{\footnotesize \nouppercase{\rightmark}}}%
 \rhead{{\footnotesize \iDocName{}}}%
 \rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
-\lfoot{{\footnotesize Якутские космические системы - http://yktsat.sjsa.ru/docs}}%
+\lfoot{{\footnotesize Якутские Аэрокосмические Системы - https://docs.yktaero.space}}%
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \chead{\HeaderRect}%
@@ -79,7 +79,7 @@
 
 %\let\HeadRule\headrule
 
-%\renewcommand\headrule{\color{blueAux}\HeadRule}
+%\renewcommand\headrule{\color{blueAux}\HeadRule}s
 
 \fancypagestyle{plain}{
   \fancyhf{}
@@ -91,7 +91,7 @@
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
-  \rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} - http://yktsat.sjsa.ru/docs/ykts-000001.pdf}}%
+  \rfoot{{\footnotesize \iDocCode{} \iDocRevision{} \iDocDate{} - https://docs.yktaero.space/\MakeLowercase{\iDocCode{}-\iDocRevision{}}.pdf}}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
