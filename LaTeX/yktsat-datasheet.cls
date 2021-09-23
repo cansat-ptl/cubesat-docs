@@ -1,10 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{yktsat-datasheet}[2020/07/19 Yktsat Datasheet]
 
-\LoadClass[a4paper,11pt,twoside]{article}
+\LoadClass[a4paper,11pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page geometry %%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[top=2cm, bottom=2cm, left=3cm, right=1.5cm, asymmetric]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=1.5cm]{geometry}
 
 \setlength{\headheight}{7mm}
 \setlength{\headsep}{5mm}
@@ -60,6 +60,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Header and footer %%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
+\markboth{Left}{Right}
 \pagestyle{fancy}
 
 \fancyheadoffset[L]{1.5cm}
@@ -67,11 +68,10 @@
 
 \fancyhf{}
 \AtBeginDocument{%
-\fancyhead[LE,RO]{{\footnotesize \nouppercase{\rightmark}}}%
-\fancyhead[RE,LO]{{\footnotesize \iDocName{}}}%
-\fancyfoot[LO]{{\footnotesize \thepage \hspace{1cm} {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{}}}%
-\fancyfoot[RE]{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
-\fancyfoot[RO,LE]{{\footnotesize Якутские космические системы - http://yktsat.sjsa.ru/docs}}%
+\lhead{{\footnotesize \nouppercase{\rightmark}}}%
+\rhead{{\footnotesize \iDocName{}}}%
+\rfoot{{\footnotesize \iDocCode{} \iDocRevision{} \iDocDate{} \hspace{1cm} \thepage}}%
+\lfoot{{\footnotesize Якутские Аэрокосмические Системы - https://docs.yktaero.space}}%
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \chead{\HeaderRect}%
@@ -79,7 +79,7 @@
 
 %\let\HeadRule\headrule
 
-%\renewcommand\headrule{\color{blueAux}\HeadRule}
+%\renewcommand\headrule{\color{blueAux}\HeadRule}s
 
 \fancypagestyle{plain}{
   \fancyhf{}
@@ -91,7 +91,7 @@
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
-  \rfoot{{\footnotesize {[PUBLIC]}\iDocCode{} \iDocRevision{} \iDocDate{} - http://yktsat.sjsa.ru/docs/ykts-000001.pdf}}%
+  \rfoot{{\footnotesize \iDocCode{} \iDocRevision{} \iDocDate{} - https://docs.yktaero.space/\MakeLowercase{\iDocCode{}-\iDocRevision{}}.pdf}}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -100,7 +100,7 @@
 \usepackage{titlesec}
 
 \newlength\titleindent
-\setlength\titleindent{1.5cm}
+\setlength\titleindent{1.25cm}
 
 \titleformat{\section}
   {\Large\bfseries}{\llap{\parbox[b]{\titleindent}{\bfseries\thesection\hfill}}}{0cm}{}
@@ -116,7 +116,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Table of contents %%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
-\usepackage{blindtext}
 
 \hypersetup{
     colorlinks=true,
@@ -124,24 +123,12 @@
     linkcolor=black,
 }
 \renewcommand{\contentsname}{Содержание}
-
-% Redefinition of ToC command to get centered heading
-\makeatletter
-\renewcommand{\tableofcontents}{%
-  \@starttoc{toc}%
-}
-\makeatother
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%% Unmarked sections %%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{changepage}
-
-\newcommand{\unmarkedsection}[1]{\begin{adjustwidth}{-0.75cm}{0cm}\section*{#1\phantomsection\markright{#1}{}}\end{adjustwidth} \addcontentsline{toc}{section}{#1}}
-\newcommand{\unmarkedsectionL}[1]{\begin{adjustwidth}{-0.75cm}{0cm}\section*{#1\phantomsection\markright{#1}{}}\end{adjustwidth} \addcontentsline{toc}{subsection}{#1}}
-\newcommand{\unmarkedsectionNT}[1]{\begin{adjustwidth}{-0.75cm}{0cm}\section*{#1\phantomsection\markright{#1}{}}\end{adjustwidth}}
-\newcommand{\unmarkedsectionLine}[0]{\vspace{-0.5cm} \begin{adjustwidth}{-0.75cm}{0cm}{\color{blueMain}\rule{\linewidth}{1pt}}\end{adjustwidth}}
+\newcommand{\unmarkedsection}[1]{\section*{#1\phantomsection\markright{#1}{}} \addcontentsline{toc}{section}{#1}}
+\newcommand{\unmarkedsectionL}[1]{\section*{#1\phantomsection\markright{#1}{}} \addcontentsline{toc}{subsection}{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
